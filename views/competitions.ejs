@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/styles.css"> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">   
+</head>
+<body>
+
+<%- include('partials/header') %>
+<section class="competitions-hero">
+    <h1>Explore Cutting-Edge Competitions</h1>
+    <p>Dive into a variety of data science competitions. Showcase your skills, learn from others, and climb the leaderboards.</p>
+    <div class="hero-buttons">
+        <a href="#competitions-overview" class="button current">Current Competitions</a>
+        <a href="#past-winners" class="button past">Past Winners</a>
+    </div>
+</section>
+
+<section id="competitions-overview" class="competitions-at-glance">
+    <div class="competition-container">
+      <div class="image-section">
+        <img src="/images/comp2.jpeg" alt="Competitions Image">
+      </div>
+      <div class="text-section">
+        <h2>Competitions at a Glance</h2>
+        <p>Find the perfect challenge that matches your skill set and interests.</p>
+        <ul>
+          <li>Wide Range of Topics</li>
+          <li>Global Participation</li>
+          <li>Practical Experience</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  
+  
+  <section class="competitions-overview">
+    <div class="container">
+        <div class="competition-card">
+            <img src="/images/iris.jpeg" alt="Iris Dataset">
+            <h3>Iris Dataset Competition</h3>
+            <p>Test your skills with the classic Iris dataset used for varied machine learning problems.</p>
+            <a href="/submission" class="competition-link">Go to Competition</a>
+        </div>
+        <div class="competition-card">
+            <img src="/images/red.jpg" alt="Red Wine Quality">
+            <h3>Red Wine Quality Competition</h3>
+            <p>Can you predict the quality of red wine based on its properties? Take on this challenge!</p>
+            <a href="/submission" class="competition-link">Go to Competition</a>
+        </div>
+        <div class="competition-card">
+            <img src="/images/german.jpg" alt="German Credit Dataset">
+            <h3>German Credit Dataset Competition</h3>
+            <p>Analyze credit data and build a model to improve credit scoring accuracy.</p>
+            <a href="/submission" class="competition-link">Go to Competition</a>
+        </div>
+    </div>
+</section>
+
+<%- include('partials/footer') %>
+
+</body>
+</html>

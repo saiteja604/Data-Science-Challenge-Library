@@ -1,0 +1,39 @@
+AI FINAL PROJECT
+│
+├───ml_models (or python_services)
+│     ├───train_model.py
+│     ├───predict.py
+│     └───model.joblib
+│
+├───services
+│     ├───mlService.js
+│     ├───dataService.js
+│     ├───evaluationService.js
+│     ├───userService.js
+│     └───submissionService.js
+│
+├───routes
+│     ├───ml_routes.js
+│     ├───user_routes.js
+│     └───submission_routes.js
+│
+├───views
+│     └───... (your EJS files)
+│
+├───public
+│     ├───data
+│     │     ├───sample.csv
+│     │     └───template.csv
+│     └───... (other static files)
+│
+├───models (mongoose schemas)
+│
+├───utils (helper functions)
+│
+├───node_modules
+│
+├───.env (for your environment variables)
+│
+├───app.js (main application file)
+│
+└───package.json (Node.js project manifest)

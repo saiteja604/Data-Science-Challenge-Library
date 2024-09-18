@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title || 'Default Title' %></title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        /* Add your custom styles here */
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        textarea {
+            width: 100%;
+            height: 150px;
+            margin-bottom: 20px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .go-back {
+            display: block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #008CBA;
+        }
+
+        .go-back:hover {
+            text-decoration: underline;
+        }
+    </style>    
+</head>
+<body>
+
+<%- include('partials/header') %>
+<div id="predicted-tags">
+    <% if (tags && tags.length > 0) { %>
+        <% tags.forEach(function(tag) { %>
+            <div><%= tag %></div>
+        <% }); %>
+    <% } else { %>
+        <p>No tags predicted.</p>
+    <% } %>
+</div>
+<a href="/" class="go-back">Go Back to Home</a>
+
+<%- include('partials/footer') %>
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title || 'Stack Overflow Predictive Analysis' %></title>
+    <link rel="stylesheet" href="/css/styles.css">    
+</head>
+<body>
+
+<%- include('partials/header') %>
+
+<div class="predictive-analysis-container">
+    <h2>Predictive Analysis for Stack Overflow Questions</h2>
+    <form action="/predict-tags" method="post" class="question-form">
+        <textarea id="question-input" name="question" placeholder="Enter your Stack Overflow question here..." required></textarea>
+        <button type="submit" class="submit-btn">Analyze Question</button>
+    </form>
+</div>
+
+<%- include('partials/footer') %>
+
+<style>
+.predictive-analysis-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.question-form {
+    margin-top: 20px;
+}
+
+#question-input {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    resize: vertical;
+}
+
+.submit-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+</style>
+<script>
+      function predictTags() {
+    var question = document.getElementById('question-input').value;
+    console.log('Sending question:', question); // Debugging
+
+    fetch('/predict-tags', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ question: question })
+    })
+    .then(response => {
+        console.log('Response received:', response); // Debugging
+        if(response.ok) {
+            window.location.href = '/predict-tags-results'; // Redirect
+        } else {
+            throw new Error('Prediction failed');
+        }
+    })
+    .catch(error => console.error('Error:', error));
+}
+
+</script>
+
+</body>
+</html>

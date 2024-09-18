@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title || 'Default Title' %></title>
+    <link rel="stylesheet" href="/css/styles.css">    
+</head>
+<body>
+
+<%- include('partials/header') %>
+
+<div class="hero">
+    <div id="slide1" class="slide" style="background-image: url('/images/1.png');"></div>
+    <div id="slide2" class="slide" style="background-image: url('/images/2.jpg');"></div>
+    <div id="slide3" class="slide" style="background-image: url('/images/3.jpeg');"></div>
+    <div class="hero-content">
+        <h1>Welcome to Data Science Challenge Library</h1>
+        <p>Your hub for data science competitions, collaboration, and learning.</p>
+    </div>
+</div>
+
+<section class="why-participate-section">
+    <div class="container why-participate-container">
+        <div class="why-participate-image">
+            <img src="/images/4.jpeg" alt="Image description">
+        </div>
+        <div class="why-participate-content">
+            <h2>Why Participate?</h2>
+            <p>Engage in real-world challenges and sharpen your data science skills.</p>
+            <ul class="benefits-list">
+                <li><span class="icon orange-circle"></span>Diverse Challenges</li>
+                <li><span class="icon blue-circle"></span>Global Community</li>
+                <li><span class="icon red-circle"></span>Real-Time Leaderboards</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+<section class="faq-section">
+    <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-columns">
+            <div class="faq-column">
+                <h3>How to Participate in Competitions?</h3>
+                <p>Simply register, find a competition that interests you, and submit your solution.</p>
+
+                <h3>Can Beginners Participate?</h3>
+                <p>Absolutely! We encourage participation from all skill levels.</p>
+
+                <h3>How is Solution Validity Verified?</h3>
+                <p>Solutions are evaluated using predefined criteria and ML algorithms to ensure fairness.</p>
+            </div>
+            <div class="faq-column">
+                <h3>Are there Prizes for Winners?</h3>
+                <p>Yes, winners receive recognition and rewards. Specific prizes vary by competition.</p>
+
+                <h3>Is There a Membership Fee?</h3>
+                <p>Joining the library is free. Some competitions may have entry fees.</p>
+
+                <h3>Can I Host My Own Competition?</h3>
+                <p>Yes, members can propose and host competitions subject to approval.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="courses-section">
+    <div class="container courses-container">
+        <div class="course-card">
+            <img src="/images/data-visualization.jpg" alt="Stack Overflow Predictive Analysis">
+            <h3>Stack Overflow Predictive Analysis</h3>
+            <p>Check the predictions for your stackoverflow Question and Answers like time frame, quality and tags.</p>
+            <a href="predictive_analysis" class="course-link">Try It! </a>
+        </div>
+        <div class="course-card">
+            <img src="/images/deep-learning.png" alt="Deep Learning">
+            <h3>Deep learning essentials</h3>
+            <p>Explore the world of deep learning algorithms and techniques to build neural networks and achieve breakthroughs in AI.</p>
+            <a href="#" class="course-link">Learn more ></a>
+        </div>
+        <div class="course-card">
+            <img src="/images/business-intelligence.jpg" alt="Business Intelligence">
+            <h3>Business intelligence foundations</h3>
+            <p>Master the art of transforming data into actionable insights for informed business decision-making.</p>
+            <a href="#" class="course-link">Learn more ></a>
+        </div>
+    </div>
+</section>
+
+<%- include('partials/footer') %>
+
+<script>
+    // JavaScript for the slider
+    let activeSlideIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function showSlide(index) {
+        slides.forEach((slide, idx) => {
+            slide.style.opacity = '0';
+            slide.classList.remove('active');
+        });
+
+        slides[index].classList.add('active');
+        setTimeout(() => {
+            slides[index].style.opacity = '1';
+        }, 100); // Start the fade-in effect after a short delay
+    }
+
+    function nextSlide() {
+        activeSlideIndex = (activeSlideIndex + 1) % slides.length;
+        showSlide(activeSlideIndex);
+    }
+
+    // Start the slideshow
+    showSlide(activeSlideIndex);
+    setInterval(nextSlide, 5000); // Change image every 5 seconds
+
+    function predictTags() {
+    var question = document.getElementById('question-input').value;
+    console.log('Sending question:', question); // Debugging
+
+    fetch('/predict-tags', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ question: question })
+    })
+    .then(response => {
+        console.log('Response received:', response); // Debugging
+        if(response.ok) {
+            window.location.href = '/predict-tags-results'; // Redirect
+        } else {
+            throw new Error('Prediction failed');
+        }
+    })
+    .catch(error => console.error('Error:', error));
+}
+
+</script>
+
+
+</body>
+</html>

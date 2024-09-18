@@ -1,0 +1,612 @@
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #19141461; /* Dark background for the header */
+         color: white; /* Light color for the text for contrast */
+            padding: 0.5rem 0; /* Reduced padding for a smaller header */
+        }
+        
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 2rem; /* Reduced padding around the content */
+        }
+
+        .logo-container {
+            /* Adjust the width or max-width to suit the size of your actual logo */
+            width: 300px; /* Smaller logo width */
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            display: flex;
+            gap: 5rem; /* Reduced gap between nav items */
+            background-color: #24141461; /* Slightly lighter background than header */
+            border-radius: 10px; /* Rounded corners for the navbar background */
+            align-items: center;
+            padding: 0.25rem 0.5rem; /* Reduced padding inside navbar */
+        }
+
+        .navbar a {
+    color: white; /* Ensures navigation links are light-colored */
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+
+
+        .navbar a:hover {
+            background-color: #eae5e5;
+            color: rgb(223, 221, 221);
+            border-radius: 5px; /* Rounded corners on hover */
+        }
+
+        /* Other Styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        .hero {
+            position: relative;
+            height: 500px; /* Set the height of the hero section */
+            color: white;
+            overflow: hidden;
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-position: center;
+            background-size: cover;
+            transition: opacity 1s ease-in-out;
+            opacity: 0;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        /* Content styling */
+        .hero-content {
+            position: relative;
+            z-index: 10; 
+            color: #949286; /* This sets the text color to black, change as needed */
+            text-align: center; /* Align text in the center horizontally */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Align text in the center vertically */
+            height: 100%; /* Take full height of the parent .hero section */
+            width: 100%; /* Take full width of the parent .hero section */
+        }
+        .why-participate-section {
+    padding: 4rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.why-participate-container {
+    display: flex;
+    max-width: 1200px; /* Control the maximum width of the container */
+    align-items: center;
+    justify-content: space-between; /* Ensures space around items */
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+}
+
+.why-participate-image,
+.why-participate-content {
+    flex: 1; /* Both children take up equal space */
+    min-width: 300px; /* Minimum width before wrapping */
+}
+
+.why-participate-image img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Remove any default inline spacing */
+}
+
+.why-participate-content {
+    padding-left: 2rem; /* Add some spacing between image and text */
+    text-align: left;
+}
+
+/* Adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+    .why-participate-container {
+        flex-direction: column; /* Stack the items vertically */
+    }
+
+    .why-participate-image,
+    .why-participate-content {
+        flex: none; /* Do not grow or shrink */
+        width: 100%; /* Take full width */
+        min-width: 0; /* Override the minimum width */
+        padding-left: 0; /* Reset padding */
+    }
+}
+.faq-section {
+    background-color: #f5f5f5; /* Or any color that matches your design */
+    padding: 3rem 0;
+    text-align: center; /* Center the section title */
+}
+
+.faq-section h2 {
+    margin-bottom: 2rem; /* Space below the section title */
+    color: #333; /* Dark color for the title */
+}
+
+.faq-columns {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.faq-column {
+    flex-basis: 45%; /* Allocate percentage of the container width to each column */
+    text-align: left; /* Align the text to the left */
+}
+
+.faq-column h3 {
+    color: #333; /* Dark color for the questions */
+    margin-bottom: 0.5rem; /* Space below each question */
+}
+
+.faq-column p {
+    margin-bottom: 1.5rem; /* Space below each answer */
+    color: #666; /* Lighter color for the answers */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .faq-columns {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .faq-column {
+        flex-basis: 100%; /* Each column takes the full width on small screens */
+        margin-bottom: 2rem; /* Space between the columns when stacked */
+    }
+}
+.courses-section {
+    background: #f9f9f9; /* Background color for the entire section */
+    padding: 4rem 0; /* Padding for top and bottom */
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-around; /* Spacing around the cards */
+    flex-wrap: wrap; /* Responsive wrapping of cards */
+}
+
+.course-card {
+    background: #fff; /* Card background color */
+    margin: 1rem;
+    padding: 1rem;
+    width: 300px; /* Fixed width for the cards */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Card shadow for depth */
+    border-radius: 8px; /* Rounded corners for card */
+    text-align: center; /* Centering text inside the card */
+}
+
+.course-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Optional: if you want rounded corners on the image */
+}
+
+.course-card h3 {
+    margin-top: 1rem;
+    color: #333;
+}
+
+.course-card p {
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+.course-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #1e90ff; /* Color for the link */
+    text-decoration: none; /* No underline for the link */
+    font-weight: bold; /* Optional: if you want the link to be bold */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .course-card {
+        width: auto; /* Cards take the width of the container */
+        max-width: 500px; /* Maximum width for cards on small screens */
+    }
+}
+
+
+
+footer {
+    background-color: #1a1a1a; /* Dark mode background */
+    color: #ccc; /* Lighter text for readability */
+    padding: 2rem 0; /* Adjust padding as needed */
+    font-size: 0.9rem; /* Adjust font size as needed */
+}
+
+footer a {
+    color: #bb86fc; /* A light purple color for the links to stand out */
+    text-decoration: none; /* Removes underline from links */
+}
+
+footer a:hover {
+    color: #ffffff; /* Color change on hover for better visibility */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow the content to wrap on small screens */
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 1rem; /* Padding on the sides */
+}
+
+.footer-section {
+    margin: 1rem 0; /* Space between sections when stacked */
+}
+
+.footer-section h4, .footer-section p {
+    color: #ffffff; /* Ensuring headings and text are readable on dark background */
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-section {
+        margin: 1rem;
+    }
+}
+
+/* Social icons or additional elements can be styled accordingly */
+.social-icon {
+    filter: invert(100%); /* Only if the icons are dark and need to be inverted */
+}
+
+
+
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 2rem;
+        }
+/* Import the same CSS as before for header and footer */
+
+/* Hero section styling */
+.competitions-hero {
+    background-image: url('/images/bgi.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 4rem 0;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-buttons .button {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #0044cc;
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+.button.current {
+    background-color: #0066ff; /* Differentiate the 'Current' button */
+}
+
+.button.past {
+    background-color: #002288; /* Differentiate the 'Past' button */
+}
+
+.competitions-at-glance {
+    display: flex;
+    align-items: center; /* This vertically centers the text with the image */
+    justify-content: center; /* This horizontally centers the container's content */
+    text-align: center; /* This centers the text within the text-section */
+    padding: 4rem 0;
+  }
+  
+  .ompetition-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+  }
+  
+  .image-section img {
+    max-width: 70%;
+    height: auto;
+  }
+  
+  .text-section {
+    padding-left: 2rem;
+  }
+  
+  .text-section h2,
+  .text-section p,
+  .text-section ul {
+    margin: 0 0 1rem;
+  }
+  
+  .text-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .text-section ul li {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .competitions-at-glance {
+      flex-direction: column;
+    }
+  
+    .image-section,
+    .text-section {
+      width: 100%;
+    }
+  
+    .text-section {
+      padding-left: 0;
+    }
+  }
+  .benefits-list li::before {
+    content: "\f00c"; /* FontAwesome unicode for checkmark */
+    font-family: "FontAwesome"; /* Ensures the content is rendered using FontAwesome */
+    padding-right: 8px; /* Add some space between the icon and the text */
+    color: green; /* Or any color you prefer */
+  }
+  .competitions-overview .container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.competition-card {
+    flex-basis: calc(33.333% - 20px); /* Adjust the percentage for spacing */
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.competition-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px; /* Optional: if you want the images to have rounded corners */
+}
+
+.competition-link {
+    display: block; /* Make the link fill the container width for a larger click area */
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    border-radius: 2px;
+}
+
+/* Responsive layout adjustments */
+@media (max-width: 768px) {
+    .competition-card {
+        flex-basis: calc(50% - 20px); /* Two cards per row on medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .competition-card {
+        flex-basis: 100%; /* Full width on small screens */
+    }
+}
+body.dark-mode {
+    background-color: #121212;
+    color: #fff;
+}
+
+
+.leaderboard-page .container {
+    max-width: 800px;
+    margin: auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+#leaderboard {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+}
+
+#leaderboard th, #leaderboard td {
+    border: 1px solid #333;
+    padding: 0.5rem 1rem;
+}
+
+#leaderboard th {
+    background-color: #232323;
+}
+
+#leaderboard td {
+    background-color: #1c1c1c;
+}
+
+#leaderboard tbody tr:nth-child(even) td {
+    background-color: #2c2c2c; /* Zebra-striping for rows */
+}
+body.dark-mode {
+    background-color: #121212;
+    color: #fff;
+}
+
+
+
+.submission-page .container {
+    max-width: 800px;
+    margin: auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+form {
+    background-color: #eae5e5;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+input[type="file"] {
+    margin: 1rem 0;
+}
+
+button {
+    background-color: #4CAF50; /* Green for visibility */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+body.dark-mode {
+    background-image: url('/Logo_Data_Science_Challenge_Library.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+
+.login-page .login-container {
+    
+    max-width: 300px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #eae5e5;
+    border-radius: 5px;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: .5rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: .5rem;
+    border-radius: 3px;
+    border: 1px solid #eae5e5;
+    background-color: #dccccc;
+    color: #d8cbcb;
+}
+
+.login-button {
+    width: 100%;
+    padding: .5rem;
+    border: none;
+    border-radius: 3px;
+    background-color: #4CAF50; /* A pleasant green color */
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background-color: #45a049;
+}
+
+body.dark-mode {
+    background-color: #eae5e5;
+    color: #fff;
+}
+
+
+
+.registration-page .registration-container {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #eae5e5;
+    border-radius: 5px;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: .5rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: .5rem;
+    border-radius: 3px;
+    border: 1px solid #333;
+    background-color: #2c2727;
+    color: #fff;
+}
+
+.register-button {
+    width: 100%;
+    padding: .5rem;
+    border: none;
+    border-radius: 3px;
+    background-color: #4CAF50; /* A pleasant green color */
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.register-button:hover {
+    background-color: #45a049;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/styles.css"> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">   
+</head>
+<body>
+
+<%- include('partials/header') %>
+
+<main class="submission-page">
+    <div class="container">
+        <h1>Competition Submission</h1>
+        <form action="/predict" method="post" enctype="multipart/form-data">
+            <label for="file-upload">Upload your solution:</label>
+            <input type="file" name="submission" id="file-upload" accept=".pdf,.ipynb" required>
+            <button type="submit">Submit</button>
+        </form>
+        
+    </div>
+</main>
+
+
+<%- include('partials/footer') %>
+
+</body>
+</html>
